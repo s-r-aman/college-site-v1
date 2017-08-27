@@ -1,0 +1,52 @@
+$(document).ready(function() {
+  $('.parallax').parallax();
+
+  var $window = $(window); //You forgot this line in the above example
+
+  $('section[data-type="background"]').each(function(){
+     var $bgobj = $(this);
+
+     $(window).scroll(function(){
+
+       var yPos = -($window.scrollTop()/ $bgobj.data('speed'));
+
+       var coords = '50%'+ yPos +'px';
+
+       $bgobj.css({ backgroundPosition: coords });
+      });
+
+  });
+
+
+  /*var $window = $(window); //You forgot this line in the above example
+
+  $('section[data-type="background"]').each(function() {
+    var $bgobj = $(this); // assigning the object
+    $(window).scroll(function() {
+      var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+      // Put together our final background position
+      var coords = '50% ' + yPos + 'px';
+      // Move the background
+      $bgobj.css({
+        backgroundPosition: coords
+      });
+    });
+  });*/
+
+});
+
+
+
+var targetPos = $('#home-navigation').offset().top;
+$(window).scroll(function() {
+  var scrollPos = $(this).scrollTop();
+  //console.log(targetPos);
+  if (scrollPos > targetPos) {
+    $('#home-navigation').addClass('fixed-nav');
+    $('.snapHere').addClass('snap');
+
+  } else {
+    $('#home-navigation').removeClass('fixed-nav');
+    $('.snapHere').removeClass('snap');
+  }
+});

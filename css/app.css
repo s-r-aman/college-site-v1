@@ -1,0 +1,92 @@
+
+/* NOTE: Header Content */
+header{
+  background-color: #8b0000;
+  color: #eeeeee;
+  width:100%;
+  z-index: 2;
+}
+
+h1{
+  font-size: 40px;
+  margin: 0px;
+  text-align: center;
+  padding: 10px;
+}
+
+h2{
+  font-size: 20px;
+  margin: 0px;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 15px;
+}
+
+/* NOTE: Parallac Image */
+
+#home {
+  background: url(../img/sample_pic1.png) center center  no-repeat fixed;
+  min-height: 360px;
+  max-height: 360px;
+  z-index: -1;
+  margin: 0 auto;
+  width: 100%;
+
+  position: relative;
+}
+
+/* NOTE: Navigation */
+nav{
+  background-color: #cecece;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li{
+  flex:1;
+  text-align: center;
+  color: black;
+}
+
+nav ul li a{
+  color: black;
+  font-weight: bold;
+}
+
+
+
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  right: 30px;
+  border-bottom: 2px solid black;
+  -webkit-transition: -webkit-transform .25s cubic-bezier(.25,.46,.45,.94);
+  transition: -webkit-transform .25s cubic-bezier(.25,.46,.45,.94);
+  transition: transform .25s cubic-bezier(.25,.46,.45,.94);
+  transition: transform .25s cubic-bezier(.25,.46,.45,.94),-webkit-transform .25s cubic-bezier(.25,.46,.45,.94);
+}
+
+a:hover:after {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+}
+
+a {
+position: relative;
+}
+
+.fixed-nav{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.snap{
+  margin-top: 82px;
+}
